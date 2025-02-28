@@ -8,6 +8,8 @@ import string
 from torch.utils.data import Dataset, DataLoader
 from tqdm import tqdm
 
+from nGPT_pytorch import nGPT
+
 # Import our toroidal model implementation
 # This import will need to be adjusted based on your file structure
 from toroidal_ngpt import ToroidalGPT, toroidal_norm

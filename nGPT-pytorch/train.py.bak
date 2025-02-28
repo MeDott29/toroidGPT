@@ -31,9 +31,7 @@ USE_PARAMETRIZE = True # whether to manually update weights after each optimizer
 
 device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 
-if USE_AMP and not torch.cuda.is_available():
-    print('WARNING: AMP enabled but CUDA not available. Disabling AMP.')
-    USE_AMP = False
+assert not (USE_AMP and not torch.cuda.is_available())
 
 # helpers
 
