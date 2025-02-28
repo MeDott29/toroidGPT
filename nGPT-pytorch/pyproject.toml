@@ -1,0 +1,60 @@
+[project]
+name = "nGPT-pytorch"
+version = "0.2.7"
+description = "nGPT"
+authors = [
+    { name = "Phil Wang", email = "lucidrains@gmail.com" }
+]
+readme = "README.md"
+requires-python = ">= 3.9"
+license = { file = "LICENSE" }
+keywords = [
+    'artificial intelligence',
+    'deep learning',
+    'transformer',
+    'attention mechanism',
+    'hypersphere',
+]
+
+classifiers=[
+    'Development Status :: 4 - Beta',
+    'Intended Audience :: Developers',
+    'Topic :: Scientific/Engineering :: Artificial Intelligence',
+    'License :: OSI Approved :: MIT License',
+    'Programming Language :: Python :: 3.9',
+]
+
+dependencies = [
+    "einops>=0.8.0",
+    "rotary_embedding_torch",
+    "torch>=2.4",
+]
+
+[project.urls]
+Homepage = "https://pypi.org/project/nGPT-pytorch/"
+Repository = "https://github.com/lucidrains/nGPT-pytorch"
+
+[project.optional-dependencies]
+examples = []
+test = [
+    "pytest"
+]
+
+[tool.pytest.ini_options]
+pythonpath = [
+  "."
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+dev-dependencies = []
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["nGPT_pytorch"]
